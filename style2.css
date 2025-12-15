@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0; 
+    height:100vh;
+    font-family:"PixelBig", sans-serif;
+    background-image: url("screen2bg.png");
+    background-size: cover;     
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.screenhidden{
+    text-align: center;
+}
+
+/* Container */
+.circle-timer {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin-top: 200px;
+  margin-left:50px;
+}
+
+
+.progress-ring {
+  transform: rotate(-90deg); 
+}
+
+
+.progress-ring__bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 12;
+}
+
+
+.progress-ring__progress {
+  fill: none;
+  stroke: rgb(255, 255, 255);
+  stroke-width: 12;
+  stroke-linecap: round;
+
+  stroke-dasharray: 628; /* 2πr (2 * 3.14 * 100) */
+  stroke-dashoffset: 628; /* start empty */
+  transition: stroke-dashoffset 1s linear;
+}
+
+/* Timer text */
+.timer-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* Start Button */
+#start-button {
+  margin-top: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+#start-button img {
+  width: 100px;      
+  height: 100px;
+  object-fit: contain;
+}
+
+#boat img{
+     margin-top: 00px;
+    margin-left: 100px;
+}

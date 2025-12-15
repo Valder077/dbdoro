@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dragonboat Pomodoro Timer</title>
+    <link rel="stylesheet" href="style2.css" /> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+
+
+<body>
+        <div id= "screen2" class= "screenhidden">
+           
+
+        <div id= "river"class= "river">
+            <img id ="boat" src= "boatframe.png" alt = "dragon boat"/>
+        </div>
+<div class="timer-panel">
+
+  <div class="circle-timer">
+    <svg class="progress-ring" width="220" height="220">
+      <circle
+        class="progress-ring__bg"
+        cx="110"
+        cy="110"
+        r="100"
+      />
+      <circle
+        class="progress-ring__progress"
+        cx="110"
+        cy="110"
+        r="100"
+      />
+    </svg>
+
+   
+    <div id="timer" class="timer-display">25:00</div>
+  </div>
+
+</div>
+           <div class="controls"> 
+    <button id="start-button"> 
+        <img id="starticon" src="start.png">
+    </button>
+
+    <button id="restart-button">
+        <img id="restarticon" src="restart.png">
+    </button>
+
+    <button id="back-button">
+        <img id="backicon" src="back.png">
+    </button>
+</div>
+
+            <div id = "session-info" class = "session-info"></div>
+        <script src="timer.js"></script>
+
+</div>
+       
+     <div id = "text" class = "timertext">Your race ends in :  </div>
+    
+
+</body>        
+

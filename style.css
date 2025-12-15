@@ -1,0 +1,186 @@
+/*shld do the title fade in thing*/
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+@font-face {
+  font-family: "PixelBig";
+  src: url("./Fonts/ByteBounce.ttf") format("truetype");
+}
+
+
+body {
+    margin: 0;
+    padding: 0; 
+    height:100vh;
+    font-family:"PixelBig", sans-serif;
+    background-image: url("backgrounds.png");
+    background-size: cover;     
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+
+
+}
+
+.screen{
+    text-align: center;
+}
+
+.title{
+    font-size: 7rem;
+    color: #ffffff; 
+    margin-top: 1px;
+    font-weight: 700;
+    text-shadow: 0px 2px 5px rgba(0,0,0,0.15);
+    opacity: 0;
+    animation: fadeInDown 0.8s ease-out forwards;
+      
+  
+
+}
+.options {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap : 25px;
+    width: 550px;
+    margin: 0 auto; 
+    transform: translateX(-135px); 
+}
+  .race-button {
+    padding: 40px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 18px;
+    font-size: 2rem;
+   
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+    font-weight: 550;
+    font-family:"PixelBig", sans-serif; 
+    color: #000000;
+    position: relative;
+    overflow: hidden;
+    width: 400px;
+    height : 250px;
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: center;
+  height: 120px;
+}
+
+.race-button:hover {
+  height: 230px;              
+  transform: translateY(-4px);
+}
+.race-button .label {
+  font-size: 2.2rem;
+  z-index: 2;
+  margin-top: -10px; 
+}
+
+.race-button.boatgif {
+    width:140px;
+    margin-top: 15px;
+    opacity:0;
+    transform: translateY(-20px);
+    transition: 0.35s ease;
+}
+
+.race-button.boatgif:hover {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/*tentatively gonna try out the animation might change to diff pics*/
+
+.race-button:after{
+    
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform : translateY(-50%);
+    font-size: 1.5rem; 
+    opacity: 0; 
+    transition: 0.3s ease; 
+
+}
+
+.race-button:hover::after{
+    right  : 15px; 
+    opacity: 1;
+}
+
+#mutebutton {
+  position: fixed;
+  bottom: 5px;     
+  right: 10px;      
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+#mutebutton img {
+  width: 150px;      
+  height: 150px;
+  object-fit: contain;
+}
+
+#mutebutton :hover img{
+  transform : scale(1.1);
+  transition:0.2s ease; 
+}
+
+#bubble-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    pointer-events: auto;
+    cursor: pointer;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-120vh); opacity: 0; }
+}
+
+.bubble.pop {
+    animation: popAnim 0.2s forwards;
+}
+
+@keyframes popAnim {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.8); opacity: 0; }
+}
+
+

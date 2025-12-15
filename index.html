@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dragonboat Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css" /> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <audio id="clickSound" src="click.mp3"></audio>
+    <audio id="hoverSound" src="hover.mp3"></audio>
+    <audio id="bgsound" src="waves.mp3" autoplay loop muted></audio>
+
+    <button id="mutebutton">
+      <img id="muteicon" src="sound.png" />
+    </button> 
+
+    <div id="screen1" class="screen"> 
+      <h1 class="title">CHOOSE YOUR RACE</h1> 
+      <div class="options">
+        <button class="race-button" data-mins="5"> 
+          <span class="label">Quick Race - 200m</span>
+          <span class="labelsub">(5 MINUTES)</span>
+          <img src="boat.gif" class="boat-gif"/>    
+        </button>
+
+        <button class="race-button" data-mins="25">  
+          <span class="label">Standard Race - 500m</span>
+          <span class="labelsub">(25 MINUTES)</span>
+          <img src="boat.gif" class="boat-gif"/>
+        </button>
+
+        <button class="race-button" data-mins="60"> 
+          <span class="label">Long Race - 1000m</span>
+          <span class="labelsub">(1 HOUR)</span>
+          <img src="boat.gif" class="boat-gif"/>
+        </button>
+
+        <button class="race-button" data-mins="120"> 
+          <span class="label">Mega Race - 2000m</span>
+          <span class="labelsub">(2 HOURS)</span>
+          <img src="boat.gif" class="boat-gif"/>
+        </button>
+      </div>
+    </div>
+      <div id="bubble-container"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
