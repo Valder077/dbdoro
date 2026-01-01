@@ -26,61 +26,58 @@ function formatTime(seconds) {
     return `${m}:${s}`;
 }
 
-// Move the boat across screen
-function updateBoat() {
-    const progress = (1 - timeLeft / totalTime) * 100;
-    boat.style.transform = `translateX(${progress}%)`;
-}
 
-// Update the Pomodoro ring
+
+
+
 function updateRing() {
-    const progress = 628 * (timeLeft / totalTime); // 628 = stroke-dasharray
+    const progress = 628 * (timeLeft / totalTime); 
     circle.style.strokeDashoffset = progress;
 }
 
-// ⭐ START/PAUSE TOGGLE ⭐
+
 startBtn.addEventListener("click", () => {
     if (!isRunning) {
-        // Start timer
+        
         isRunning = true;
-        startIcon.src = "pause.png";  // change icon
+        startIcon.src = "pause.png";  
 
         timerInterval = setInterval(() => {
             if (timeLeft <= 0) {
                 clearInterval(timerInterval);
                 isRunning = false;
-                startIcon.src = "start.png";  // reset icon
+                startIcon.src = "start.png";  
                 return;
             }
 
             timeLeft--;
             timerDisplay.textContent = formatTime(timeLeft);
             updateBoat();
-            updateRing(); // update the ring
+            updateRing(); 
         }, 1000);
 
     } else {
-        // Pause timer
+        
         clearInterval(timerInterval);
         isRunning = false;
-        startIcon.src = "start.png"; // change icon back
+        startIcon.src = "start.png"; 
     }
 });
 
-// Restart button
+
 restartBtn.addEventListener("click", () => {
     clearInterval(timerInterval);
     timeLeft = totalTime;
     timerDisplay.textContent = formatTime(timeLeft);
     boat.style.transform = "translateX(0)";
-    circle.style.strokeDashoffset = 628; // reset ring
+    circle.style.strokeDashoffset = 628; 
     isRunning = false;
 
-    // reset icon
+    
     startIcon.src = "start.png";
 });
 
-// Back button
+
 backBtn.addEventListener("click", () => {
     window.location.href = "index.html";
 });

@@ -21,8 +21,8 @@ body {
   position: relative;
   width: 220px;
   height: 220px;
-  margin-top: 200px;
-  margin-left:50px;
+  margin-top: 140px;
+  margin-left:12px;
 }
 
 
@@ -76,7 +76,7 @@ body {
   object-fit: contain;
 }
 
-#boat img{
-     margin-top: 00px;
+#river  {
+     margin-top: 50px;
     margin-left: 100px;
 }
