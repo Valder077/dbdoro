@@ -5,21 +5,21 @@ const restartBtn = document.getElementById("restart-button");
 const backBtn = document.getElementById("back-button");
 const sessionInfo = document.getElementById("session-info");
 const boat = document.getElementById("boat");
-const circle = document.querySelector(".progress-ring__progress"); // Pomodoro ring
+const circle = document.querySelector(".progress-ring__progress"); 
 
 const urlParams = new URLSearchParams(window.location.search);
-let timeLeft = parseInt(urlParams.get("time")) || 1500; // default 25 min if not set
+let timeLeft = parseInt(urlParams.get("time")) || 1500; 
 let totalTime = timeLeft;
 
 let timerInterval = null;
 let isRunning = false;
 
-// Initialize display
-timerDisplay.textContent = formatTime(timeLeft);
-circle.style.strokeDasharray = 628; // same as CSS
-circle.style.strokeDashoffset = 628; // start empty
 
-// Format seconds as mm:ss
+timerDisplay.textContent = formatTime(timeLeft);
+circle.style.strokeDasharray = 628; 
+circle.style.strokeDashoffset = 628; 
+
+
 function formatTime(seconds) {
     const m = String(Math.floor(seconds / 60)).padStart(2, "0");
     const s = String(seconds % 60).padStart(2, "0");
